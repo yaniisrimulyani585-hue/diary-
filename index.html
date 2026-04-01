@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌸 Srimulyani 🌸</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    background: linear-gradient(270deg, #ffc0cb, #ffe4ec, #d0f4ff);
+    background-size: 600% 600%;
+    animation: bg 10s ease infinite;
+    text-align: center;
+}
+
+@keyframes bg {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* Judul animasi */
+h1 {
+    color: #ff6f91;
+    margin-top: 30px;
+    animation: float 3s infinite;
+}
+
+@keyframes float {
+    50% {transform: translateY(-10px);}
+}
+
+/* Typing effect */
+.typing {
+    border-right: 2px solid;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 4s steps(30) forwards;
+}
+
+@keyframes typing {
+    to {width: 250px;}
+}
+
+/* Card */
+.timeline {
+    max-width: 400px;
+    margin: auto;
+}
+
+.card {
+    background: white;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    animation: fadeIn 1.5s ease;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05) rotate(1deg);
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1;}
+}
+
+/* Emoji jatuh */
+.emoji {
+    position: fixed;
+    top: -50px;
+    font-size: 20px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+/* Awan */
+.cloud {
+    position: absolute;
+    top: 50px;
+    width: 80px;
+    animation: moveCloud 20s linear infinite;
+}
+
+@keyframes moveCloud {
+    from {left: -100px;}
+    to {left: 100%;}
+}
+
+/* Tombol */
+button {
+    margin: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background: #ff8fab;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ff4d6d;
+    transform: scale(1.1);
+}
+</style>
+</head>
+
+<body>
+
+<!-- Awan lucu -->
+<img src="https://cdn-icons-png.flaticon.com/512/414/414825.png" class="cloud">
+<img src="https://cdn-icons-png.flaticon.com/512/414/414825.png" class="cloud" style="top:120px; animation-duration:25s;">
+
+<h1>🌸 Keseharian Srimulyani 🌸</h1>
+
+<p class="typing">Diary  kehidupan sehari-hari 💕</p>
+
+<div class="timeline">
+
+    <div class="card">
+        🌅 Bangun tidur,membereskan tempat tidur dan langsung mandi dan bersiap siap ke sekolah
+    </div>
+
+    <div class="card">
+        🏫 Belajar di kelas XI TKJ 2 + bercanda 😆
+    </div>
+
+    <div class="card">
+        🍜 Makan bareng teman itu paling seru 💖
+    </div>
+
+    <div class="card">
+        🌇 Pulang sekolah & istirahat
+    </div>
+
+    <div class="card">
+        🌙 Belajar + main HP + tidur 😴
+    </div>
+
+</div>
+
+<button onclick="motivasi()">💖 Klik Motivasi</button>
+
+<script>
+// motivasi
+function motivasi(){
+    alert("Semangat terus yaa 🌸 kamu hebat banget 💖");
+}
+
+// emoji jatuh
+let emojis = ["💖","🌸","✨","💫","💕"];
+setInterval(()=>{
+    let e = document.createElement("div");
+    e.className = "emoji";
+    e.innerText = emojis[Math.floor(Math.random()*emojis.length)];
+    e.style.left = Math.random()*100 + "vw";
+    e.style.animationDuration = (3 + Math.random()*5) + "s";
+    document.body.appendChild(e);
+
+    setTimeout(()=>{e.remove()},8000);
+},500);
+</script>
+
+</body>
+</html>
